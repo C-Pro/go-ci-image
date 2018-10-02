@@ -1,3 +1,4 @@
+FROM docker
 FROM golang:alpine
 
 MAINTAINER Sergey Melekhin <sergey@melekhin.me>
@@ -7,3 +8,5 @@ VOLUME /cache
 
 RUN apk add --no-cache git make bash postgresql-client dpkg tar
 RUN go get github.com/alecthomas/gometalinter && gometalinter --install
+COPY --from=0 /usr/local/bin/docker /usr/bin/docker
+
