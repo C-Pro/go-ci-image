@@ -1,5 +1,5 @@
 FROM docker
-FROM golang:alpine
+FROM golang:1.11.1-alpine
 
 MAINTAINER Sergey Melekhin <sergey@melekhin.me>
 RUN mkdir /cache
