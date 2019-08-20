@@ -1,5 +1,5 @@
 FROM docker
-FROM golang:1.12.4-stretch
+FROM golang:1.12.9-stretch
 
 MAINTAINER Sergey Melekhin <sergey@melekhin.me>
 RUN mkdir /cache
