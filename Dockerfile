@@ -1,5 +1,5 @@
 FROM docker
-FROM golang:1.13.4-stretch
+FROM golang:1.16.3-buster
 
 MAINTAINER Sergey Melekhin <sergey@melekhin.me>
 RUN mkdir /cache
@@ -13,6 +13,6 @@ RUN apt-get update && apt-get install -y git make postgresql-client \
 RUN wget https://github.com/git/git/archive/v2.24.1.zip -O git.zip && \
     unzip git.zip && rm git.zip && cd git-* && make prefix=/usr all && \
     make prefix=/usr install && rm -rf git-*
-RUN GO111MODULE=on go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.20.0
+RUN GO111MODULE=on go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.39.0
 COPY --from=0 /usr/local/bin/docker /usr/bin/docker
 RUN apt-get install -y python3-pip && pip3 install docker-compose
