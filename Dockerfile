@@ -1,5 +1,5 @@
 FROM docker
-FROM golang:1.16.3-buster
+FROM golang:1.17.0-buster
 
 MAINTAINER Sergey Melekhin <sergey@melekhin.me>
 RUN mkdir /cache
